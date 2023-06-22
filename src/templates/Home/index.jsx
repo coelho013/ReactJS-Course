@@ -38,7 +38,6 @@ export const Home = () => {
   
     
   useEffect(() => {
-    console.log('oi')
   handleLoadPosts(0, postsPerPage);
 }, [handleLoadPosts, postsPerPage]);
 
@@ -84,7 +83,8 @@ const loadMorePosts = () => {
 
       <div className="button-container">
       {!searchValue && (
-        <Button
+          <Button
+        onClick={loadMorePosts}
         text={"Load more posts"}
         loadMorePosts={loadMorePosts}
         disabled={noMorePosts}
